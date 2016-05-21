@@ -11,6 +11,7 @@
 *.userprefs
 
 # Build results
+[Bb]uild/
 [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
@@ -67,6 +68,8 @@ artifacts/
 *.pidb
 *.svclog
 *.scc
+*.vcxproj
+*.vcxproj.filters
 
 # Chutzpah Test files
 _Chutzpah*
