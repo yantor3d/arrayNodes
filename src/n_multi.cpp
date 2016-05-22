@@ -84,6 +84,11 @@ MStatus ArrayMultiOperatorNode::initialize()
     return MS::kSuccess;
 }
 
+void ArrayMultiOperatorNode::postConstructor()
+{
+    this->setExistWithoutOutConnections(true);
+}
+
 MStatus ArrayMultiOperatorNode::compute(const MPlug& plug, MDataBlock& data)
 {
     if (plug != aOutput)

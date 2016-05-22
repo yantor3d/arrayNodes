@@ -78,6 +78,11 @@ MStatus SliceArrayNode::initialize()
     return MS::kSuccess;
 }
 
+void SliceArrayNode::postConstructor()
+{
+    this->setExistWithoutOutConnections(true);
+}
+
 MStatus SliceArrayNode::compute(const MPlug& plug, MDataBlock& data)
 {
     MStatus status;

@@ -85,6 +85,11 @@ MStatus ModifyArrayNode::initialize()
     return MS::kSuccess;
 }
 
+void ModifyArrayNode::postConstructor()
+{
+    this->setExistWithoutOutConnections(true);
+}
+
 MStatus ModifyArrayNode::compute(const MPlug& plug, MDataBlock& data)
 {
     MStatus status;

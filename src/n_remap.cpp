@@ -114,6 +114,7 @@ MStatus RemapArrayValuesNode::initialize()
 
 void RemapArrayValuesNode::postConstructor()
 {
+    this->setExistWithoutOutConnections(true);
     this->setInitialRampValues();
 }
 

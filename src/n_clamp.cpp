@@ -69,6 +69,11 @@ MStatus ClampArrayNode::initialize()
     return MS::kSuccess;
 }
 
+void ClampArrayNode::postConstructor()
+{
+    this->setExistWithoutOutConnections(true);
+}
+
 MStatus ClampArrayNode::compute(const MPlug& plug, MDataBlock& data)
 {
     if (plug != aOutput)

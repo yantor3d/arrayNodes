@@ -114,6 +114,11 @@ MStatus ArrayScalarOperationNode::initialize()
     return MS::kSuccess;
 }
 
+void ArrayScalarOperationNode::postConstructor()
+{
+    this->setExistWithoutOutConnections(true);
+}
+
 MStatus ArrayScalarOperationNode::compute(const MPlug& plug, MDataBlock& data)
 {
     MStatus status;

@@ -61,6 +61,11 @@ MStatus ArrayIteratorNode::initialize()
     return MS::kSuccess;
 }
 
+void ArrayIteratorNode::postConstructor()
+{
+    this->setExistWithoutOutConnections(true);
+}
+
 MStatus ArrayIteratorNode::compute(const MPlug& plug, MDataBlock& data)
 {
     if (plug != aOutput && plug.parent() != aOutput)

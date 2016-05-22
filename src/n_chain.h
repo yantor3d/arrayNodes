@@ -28,6 +28,7 @@ class ChainArraysNode : public MPxNode
 {
 public:
     virtual MStatus         compute(const MPlug& plug, MDataBlock& data);
+    virtual void            postConstructor();
     static  void*           creator();
     static  MStatus         initialize();
 

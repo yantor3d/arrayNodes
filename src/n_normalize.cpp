@@ -72,6 +72,11 @@ MStatus NormalizeArrayNode::initialize()
     return MS::kSuccess;
 }
 
+void NormalizeArrayNode::postConstructor()
+{
+    this->setExistWithoutOutConnections(true);
+}
+
 MStatus NormalizeArrayNode::compute(const MPlug& plug, MDataBlock& data)
 {
     MStatus status;

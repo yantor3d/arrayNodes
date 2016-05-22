@@ -77,6 +77,11 @@ MStatus ReduceArrayNode::initialize()
     return MS::kSuccess;
 }
 
+void ReduceArrayNode::postConstructor()
+{
+    this->setExistWithoutOutConnections(true);
+}
+
 MStatus ReduceArrayNode::compute(const MPlug& plug, MDataBlock& data)
 {
     MStatus status;

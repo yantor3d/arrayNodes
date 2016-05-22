@@ -50,6 +50,11 @@ MStatus ChainArraysNode::initialize()
     return MS::kSuccess;
 }
 
+void ChainArraysNode::postConstructor()
+{
+    this->setExistWithoutOutConnections(true);
+}
+
 MStatus ChainArraysNode::compute(const MPlug& plug, MDataBlock& data)
 {
     MStatus status;
