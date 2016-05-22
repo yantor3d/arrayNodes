@@ -84,7 +84,7 @@ MStatus RemapArrayValuesNode::initialize()
     N.setWritable(true);
     N.setDefault(1.0);
 
-    aRamp = MRampAttribute::createCurveRamp("rampValues", "rv", &status);
+    aRamp = MRampAttribute::createCurveRamp("values", "vl", &status);
     CHECK_MSTATUS_AND_RETURN_IT(status);
 
     aOutput = T.create("output", "o", MFnData::kDoubleArray, &status);
