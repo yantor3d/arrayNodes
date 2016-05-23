@@ -85,6 +85,9 @@ void SliceArrayNode::postConstructor()
 
 MStatus SliceArrayNode::compute(const MPlug& plug, MDataBlock& data)
 {
+    if (plug != aOutput)
+        return MS::kUnknownParameter;
+
     MStatus status;
 
     int start = data.inputValue(aStartIndex).asInt();

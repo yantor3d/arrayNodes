@@ -79,6 +79,9 @@ void NormalizeArrayNode::postConstructor()
 
 MStatus NormalizeArrayNode::compute(const MPlug& plug, MDataBlock& data)
 {
+    if (plug != aOutput && plug.parent() != aOutput)
+        return MS::kUnknownParameter;
+
     MStatus status;
 
     MArrayDataHandle inputArrayHandle = data.inputValue(aInput, &status);

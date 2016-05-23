@@ -84,6 +84,9 @@ void ReduceArrayNode::postConstructor()
 
 MStatus ReduceArrayNode::compute(const MPlug& plug, MDataBlock& data)
 {
+    if (plug != aOutput)
+        return MS::kUnknownParameter;
+
     MStatus status;
 
     MDataHandle inputHandle = data.inputValue(aInput, &status);

@@ -141,6 +141,9 @@ MStatus RemapArrayValuesNode::setInitialRampValues()
 
 MStatus RemapArrayValuesNode::compute(const MPlug& plug, MDataBlock& data)
 {
+    if (plug != aOutput)
+        return MS::kUnknownParameter;
+
     MStatus status;
 
     MFnDoubleArrayData input(data.inputValue(aInput).data());

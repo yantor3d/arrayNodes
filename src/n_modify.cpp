@@ -92,6 +92,9 @@ void ModifyArrayNode::postConstructor()
 
 MStatus ModifyArrayNode::compute(const MPlug& plug, MDataBlock& data)
 {
+    if (plug != aOutput)
+        return MS::kUnknownParameter;
+
     MStatus status;
 
     MFnDoubleArrayData inputArray(data.inputValue(aInput).data());

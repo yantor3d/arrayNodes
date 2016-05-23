@@ -57,6 +57,9 @@ void ChainArraysNode::postConstructor()
 
 MStatus ChainArraysNode::compute(const MPlug& plug, MDataBlock& data)
 {
+    if (plug != aOutput)
+        return MS::kUnknownParameter;
+
     MStatus status;
 
     MArrayDataHandle inputArrayHandle = data.inputArrayValue(aInput);
