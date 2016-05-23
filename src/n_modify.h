@@ -1,35 +1,29 @@
-/**
-    Copyright (c) 2016 Ryan Porter - arrayNodes
-    You may use, distribute, or modify this code under the terms of the MIT license.
+/*
+    Copyright (c) 2016 Ryan Porter
 */
 
 /**
-    modifyArray
+    This node applies a function to the input array and outputs the result.
 
-    @author: Ryan Porter
-    @version: 1.0.0
-    @description:
-        This node applies a function to the input array and outputs the result.
-
-    @attributes
-        input (i) - doubleArray
-            
-        operation (op) - enum
-            Operation controls the function applied by this node. The settings are:
-                No Operation: Output is set to equal Input.
-
-                Sort: Output is set to equal the sorted values of Input.
-
-                Reflect Left: Output is set to the values of Input reflected across the first value.
-                              For example: [0, 1, 2, 3, 4] -> [4, 3, 2, 1, 0, 1, 2, 3, 4]
-
-                Reflect Right: Output is set to the values of Input reflected across the last value.
-                               For example: [0, 1, 2, 3, 4] -> [0, 1, 2, 3, 4, 3, 2, 1, 0]
-
-        reverse (rev) - boolean
-            If True, Output is set in reversed order.
-
-        output (o) - doubleArray
+    ## Attributes
+        <table>
+            <tr><th> Attribute Name <th> Short Name <th> Attribute Type
+            <tr><td> input          <td> i          <td> doubleArray
+            <tr><td colspan = "3"> List of input values that will be normalized. The sum of normalized values is always 1.0.
+            <tr><td> operation      <td> op          <td> enu,
+            <tr><td colspan = "3"> The operation that will be applied to the `input` values.
+                @param "No Operation"   Output will be identical to the input.
+                @param Sort             Output will contain all the values of the input, sorted by value.
+                @param "Reflect Left"   Output will be the input reflected across the first value.
+                                        \n For example: : [0, 1, 2, 3, 4] -> [4, 3, 2, 1, 0, 1, 2, 3, 4]
+                @param "Reflect Right"  Output will be the input reflected across the last value.
+                                        \n For example: [0, 1, 2, 3, 4] -> [0, 1, 2, 3, 4, 3, 2, 1, 0]
+            <tr><td> reverse        <td> rev         <td> bool
+            <tr><td colspan = "3">
+                If `True`, the values will be output in reverse order.
+            <tr><td> output         <td> o         <td> doubleArray
+            <tr><td colspan = "3"> The result of the operation.
+        </table>
 */
 
 #ifndef n_modifyArray_H

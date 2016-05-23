@@ -1,27 +1,22 @@
-/**
-    Copyright (c) 2016 Ryan Porter - arrayNodes
-    You may use, distribute, or modify this code under the terms of the MIT license.
+/*
+    Copyright (c) 2016 Ryan Porter
 */
 
 /**
-    clampArray
+    This node clamps the values of the input array within a specified range. 
 
-    @author: Ryan Porter
-    @version: 1.0.0
-    @description:
-    This node keeps the values of the input array within a specified range. 
-
-    @attributes
-        input (i) - doubleArray
-
-        min (imn) - double
-            Values in Output will not be smaller than this value.
-
-        max (imx) - double
-            Values in Output will not be larger than this value.
-
-        output (o) - doubleArray
-
+    ## Attributes
+    <table>
+        <tr><th> Attribute Name <th> Short Name <th> Attribute Type
+        <tr><td> input          <td> i          <td> doubleArray
+        <tr><td colspan = "3"> Input values.
+        <tr><td> min            <td> mn         <td> double
+        <tr><td colspan = "3"> Values in `output` will not be less than this value.
+        <tr><td> max            <td> mn         <td> double
+        <tr><td colspan = "3"> Values in `output` will not be greater than this value.
+        <tr><td> output         <td> o         <td> doubleArray
+        <tr><td colspan = "3"> Output values.
+    </table>
 */
 
 #ifndef n_clampArray_H

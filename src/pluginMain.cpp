@@ -1,6 +1,8 @@
 /**
     Copyright (c) 2016 Ryan Porter
+*/
 
+/*
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
     in the Software without restriction, including without limitation the rights
@@ -21,31 +23,34 @@
 */
 
 /**
-    arrayNodes
+    @mainpage Array Nodes
 
     @author: Ryan Porter
-    @website: https://github.com/yantor3d
     @version: 1.0.0
-    @description:
+
+    @sa https://github.com/yantor3d
+
+    ## Description
         A set of nodes for performing calculates on sets of values in a single 
         node rather than in dozens or hundreds of nodes. This allows for the 
         construction of a more compact node graph that won't get bogged down by 
         tens or hundreds of identical sub-graphs.
 
-    @nodes:
-        -arrayCtor
-        -arrayIter
-        -arrayMultiOp
-        -arrayScalarOp
-        -chainArray
-        -clampArray
-        -modifyArray
-        -normalizeArray
-        -remapArrayValues
-        -sliceArray
+    ## Nodes
+        - <a href="class_array_constructor_node.html">arrayCtor</a>
+        - <a href="class_array_iterator_node.html">arrayIter</a>
+        - <a href="class_array_multi_operator_node.html">arrayMultiOp</a>
+        - <a href="class_array_scalar_operation_node.html">arrayScalarOp</a>
+        - <a href="class_chain_arrays_node.html">chainArray</a>
+        - <a href="class_clamp_array_node.html">clampArray</a>
+        - <a href="class_modify_array_node.html">modifyArray</a>
+        - <a href="class_normalize_array_node.html">normalizeArray</a>
+        - <a href="class_reduce_array_node.html">reduceArray</a>
+        - <a href="class_remap_array_values_node.html">remapArrayValues</a>
+        - <a href="class_slice_array_node.html">sliceArray</a>
 
-    @commands:
-        n/a
+    ## Commands
+        - n/a
 */
 
 #include "n_chain.h"

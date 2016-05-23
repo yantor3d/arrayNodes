@@ -1,34 +1,31 @@
-/**
-    Copyright (c) 2016 Ryan Porter - arrayNodes
-    You may use, distribute, or modify this code under the terms of the MIT license.
+/*
+    Copyright (c) 2016 Ryan Porter
 */
 
 /**
-    sliceArray
+    This node creates an output array from a slice of the input array.
 
-    @author: Ryan Porter
-    @version: 1.0.0
-    @description:
-        This node creates an output array from a slice of the input array.
-        
-        The slice behaves the same as it does in Python.
-
-    @attributes
-        input (i) - doubleArray
-
-        start (st) - int
-            Index in the input array from which to start the slice. If start is negative,
-            the slice will start that many indices from the end of the input array.
-
-        stop (sp) - int
-            Index in the input array at which to end the slice. If stop is negative, the
-            slice will end that many indices from end of the input array.
-
-        step (ss) - int
-            Stride of each step of the slice. If step is 1, every index from
-            start to stop will be returned. Step may not be 0.
-
-        output (o) - doubleArray
+    ## Attributes
+    <table>
+        <tr><th> Attribute Name <th> Short Name <th> Attribute Type
+        <tr><td> input          <td> i          <td> doubleArray
+        <tr><td colspan = "3"> Input array that will be sliced to produce the output.
+        <tr><td> start          <td> st         <td> int
+        <tr><td colspan = "3"> 
+            Index in the input array from which to start the slice.  
+            If start is negative, the slice will start that many indices from the end of the input array.
+        <tr><td> stop           <td> sp         <td> int
+        <tr><td colspan = "3"> 
+            Index in the input array at which to end the slice. 
+            If stop is negative, the slice will end that many indices from end of the input array.
+        <tr><td> step           <td> ss         <td> int
+        <tr><td colspan = "3"> 
+            Stride of each step of the slice. 
+            If step is 1, every index from start to stop will be returned. 
+            Step may not be 0.
+        <tr><td> output         <td> o         <td> doubleArray
+        <tr><td colspan = "3"> An array containing the values sliced from the `input` array.
+    </table>
 */
 
 #ifndef n_sliceArray_H

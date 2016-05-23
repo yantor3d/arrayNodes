@@ -1,18 +1,18 @@
-/* Copyright (c) 2016 Ryan Porter - arrayNodes
-* You may use, distribute, or modify this code under the terms of the MIT license.
+/*
+    Copyright (c) 2016 Ryan Porter
 */
 
-/**
-    chainArrays
+/** 
+    This node concatenates the input arrays and outputs a single array.
 
-    @author: Ryan Porter
-    @version: 1.0.0
-    @description:
-        This node concatenates the input arrays and outputs a single array.
-
-    @attributes
-        input (i) - doubleArray[]
-        output (o) - doubleArray
+    ## Attributes
+    <table>
+        <tr><th> Attribute Name <th> Short Name <th> Attribute Type
+        <tr><td> input          <td> i          <td> doubleArray[]
+        <tr><td colspan = "3"> List of input arrays that will be chained together to produce the output.
+        <tr><td> output         <td> o         <td> doubleArray
+        <tr><td colspan = "3"> A single array containing all the values of the input arrays.
+    </table>
 */
 
 #ifndef n_chainArrays_H

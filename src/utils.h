@@ -1,5 +1,5 @@
-/* Copyright (c) 2016 Ryan Porter - arrayNodes
-* You may use, distribute, or modify this code under the terms of the MIT license.
+/* 
+    Copyright (c) 2016 Ryan Porter
 */
 
 #ifndef n_arrayNodeUtils_H

@@ -1,20 +1,18 @@
-/**
-     Copyright (c) 2016 Ryan Porter - arrayNodes
-    You may use, distribute, or modify this code under the terms of the MIT license.
+/*
+     Copyright (c) 2016 Ryan Porter
 */
 
 /**
-    arrayCtor
+    This node sets the values of each index in the input array to the index of the multi-index output.
 
-    @author: Ryan Porter
-    @version: 1.0.0
-    @description:
-        This node sets the values of each index in the input array to
-        the index of the multi-index output.
-
-    @attributes
-        - input (i)           doubleArray
-        - output (o)          doubleArray
+    ## Attributes
+        <table>
+            <tr><th> Attribute Name <th> Short Name <th> Attribute Type
+            <tr><td> input          <td> i          <td> doubleArray
+            <tr><td colspan = "3"> The values that will be unpacked to individual outputs.
+            <tr><td> output         <td> o         <td> double[]
+            <tr><td colspan = "3"> The individual values of the `input` array.
+        </table>  
 */
 
 #ifndef n_iterArray_H

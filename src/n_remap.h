@@ -1,34 +1,28 @@
-/**
-    Copyright (c) 2016 Ryan Porter - arrayNodes
-    You may use, distribute, or modify this code under the terms of the MIT license.
+/*
+    Copyright (c) 2016 Ryan Porter
 */
 
 /**
-    remapArrayValues
+    This node remaps the values of the input array using a gradient.
 
-    @author: Ryan Porter
-    @version: 1.0.0
-    @description:
-        This node remaps the values of the input array using a gradient.
-
-    @attributes
-        input (i) - doubleArray
-
-        inputMin (imn) - double
-            This determines the value which maps to the left of the gradient.
-        inputMax (imx) - double
-            This determines the value which maps to the right of the gradient.
-
-        outputMin (omn) - double
-            This determines the output value at the bottom of the gradient.
-
-        outputMax (omx) - double
-            This determines the output value at the top of the gradient.
-
-        values (vl) - ramp attribute
-            Defines a range of values used to remap the values of the input array. 
-
-        output (o) - double
+    ## Attributes
+    <table>
+        <tr><th> Attribute Name <th> Short Name <th> Attribute Type
+        <tr><td> input          <td> i          <td> doubleArray[]
+        <tr><td colspan = "3"> Values to be remapped.
+        <tr><td> inputMin       <td> imn        <td> double
+        <tr><td colspan = "3"> This determines the value which maps to the left of the gradient.
+        <tr><td> inputMax       <td> imx        <td> double
+        <tr><td colspan = "3"> This determines the value which maps to the right of the gradient.
+        <tr><td> outputMin      <td> omn        <td> double
+        <tr><td colspan = "3"> This determines the output value at the bottom of the gradient.
+        <tr><td> outputMax      <td> omx        <td> double
+        <tr><td colspan = "3"> This determines the output value at the top of the gradient.
+        <tr><td> values         <td> vl          <td> ramp attribute
+        <tr><td colspan = "3"> Defines a range of values used to remap the values of the input array.
+        <tr><td> output         <td> o         <td> doubleArray
+        <tr><td colspan = "3"> The remapped values.
+    </table>
 */
 
 #ifndef n_remapArrayValues_H
