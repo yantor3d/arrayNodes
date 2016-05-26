@@ -130,13 +130,16 @@ MStatus ArrayMultiOperatorNode::compute(const MPlug& plug, MDataBlock& data)
     }
 
     MDoubleArray outputArray(numOutputs);
+
     double value = 0.0;
+    int numValues = 0;
 
     if (elementwise)
     {
         for (int i = 0; i < numOutputs; i++)
         {
             value = 0.0;
+            numValues = 0;
             status = MS::kSuccess;
 
             if (int(inputArrays[0].length()) > i) { 
@@ -147,6 +150,7 @@ MStatus ArrayMultiOperatorNode::compute(const MPlug& plug, MDataBlock& data)
                     if (i >= sizes[j]) { break; }
 
                     value = computeOutput(value, inputArrays[j][i], operation, status);
+                    numValues++;
 
                     if (!status) {
                         reportComputeError(this, operation);
@@ -155,17 +159,23 @@ MStatus ArrayMultiOperatorNode::compute(const MPlug& plug, MDataBlock& data)
                 }
             }
 
+            if (operation == kAVERAGE && numValues > 0)
+                value /= float(numValues);
+
             outputArray.set(value, i);
         }
     } else {
         for (int i = 0; i < numInputs; i++)
         {
             value = sizes[i] > 0 ? inputArrays[i][0] : 0.0;
+            numValues = 0;
+
             status = MS::kSuccess;
 
             for (int j = 1; j < sizes[i]; j++)
             {
                 value = computeOutput(value, inputArrays[i][j], operation, status);
+                numValues++;
 
                 if (!status)
                 {
@@ -173,6 +183,9 @@ MStatus ArrayMultiOperatorNode::compute(const MPlug& plug, MDataBlock& data)
                     break;
                 }
             }
+
+            if (operation == kAVERAGE && numValues > 0)
+                value /= float(numValues);
 
             outputArray.set(value, i);
         }
