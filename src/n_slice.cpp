@@ -107,8 +107,8 @@ MStatus SliceArrayNode::compute(const MPlug& plug, MDataBlock& data)
 
     vector<int> slice = vector<int>();
 
-    start = start >= 0 ? start : numInputs - start;
-    stop = stop >= 0 ? stop : numInputs - stop;
+    start = start >= 0 ? start : numInputs + start;
+    stop = stop >= 0 ? stop : numInputs + stop;
 
     int index = start;
 
