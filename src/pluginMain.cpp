@@ -60,6 +60,7 @@
 #include "n_modify.h"
 #include "n_multi.h"
 #include "n_normalize.h"
+#include "n_reduce.h"
 #include "n_remap.h"
 #include "n_scalar.h"
 #include "n_slice.h"
@@ -69,7 +70,7 @@
 #include <maya/MString.h>
 
 const char* kAUTHOR = "Ryan Porter";
-const char* kVERSION = "1.0.0";
+const char* kVERSION = "1.0.1";
 const char* kREQUIRED_API_VERSION = "Any";
 
 MTypeId ArrayConstructorNode::kNODE_ID = 0x00126b00;
@@ -102,6 +103,9 @@ MString SliceArrayNode::kNODE_NAME = "sliceArray";
 MTypeId ChainArraysNode::kNODE_ID = 0x00126b09;
 MString ChainArraysNode::kNODE_NAME = "chainArrays";
 
+MTypeId ReduceArrayNode::kNODE_ID = 0x00126b10;
+MString ReduceArrayNode::kNODE_NAME = "reduceArray";
+
 #define REGISTER_NODE(NODE)                    \
     status = fnPlugin.registerNode(            \
         NODE::kNODE_NAME,                    \
@@ -130,6 +134,7 @@ MStatus initializePlugin(MObject obj)
     REGISTER_NODE(ChainArraysNode);
     REGISTER_NODE(ClampArrayNode);
     REGISTER_NODE(NormalizeArrayNode);
+    REGISTER_NODE(ReduceArrayNode);
     REGISTER_NODE(RemapArrayValuesNode);
     REGISTER_NODE(SliceArrayNode);
 
@@ -149,6 +154,7 @@ MStatus uninitializePlugin(MObject obj)
     DEREGISTER_NODE(ChainArraysNode);
     DEREGISTER_NODE(ClampArrayNode);
     DEREGISTER_NODE(NormalizeArrayNode);
+    DEREGISTER_NODE(ReduceArrayNode);
     DEREGISTER_NODE(RemapArrayValuesNode);
     DEREGISTER_NODE(SliceArrayNode);
 

@@ -47,10 +47,10 @@ MStatus ReduceArrayNode::initialize()
     T.setWritable(true);
 
     aOutput = N.create("output", "o", MFnNumericData::kDouble, 0.0);
-    T.setKeyable(false);
-    T.setChannelBox(false);
-    T.setWritable(true);
-    T.setStorable(true);
+    N.setKeyable(false);
+    N.setChannelBox(false);
+    N.setWritable(false);
+    N.setStorable(false);
 
     aOperation = E.create("operation", "operation");
     E.addField("No Operation", kNO_OP);
@@ -114,6 +114,9 @@ MStatus ReduceArrayNode::compute(const MPlug& plug, MDataBlock& data)
                 break;
             }
         }
+
+        if (operation == kAVERAGE && numInputs > 0)
+            output /= double(numInputs);
     }
 
     MDataHandle outputHandle = data.outputValue(this->aOutput);
