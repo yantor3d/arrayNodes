@@ -40,6 +40,17 @@
 <div class="contents">
 <a name="details" id="details"></a>
 <div class="textblock"><p>This node creates an output array from a slice of the input array.</p>
+<h2>Example</h2>
+<code>
+node = cmds.createNode('sliceArray')
+<br>cmds.setAttr(node + ".input[0]", range(10), type="doubleArray")
+<br>cmds.setAttr(node + ".start", 5)
+<br>cmds.setAttr(node + ".stop", -1)
+<br>cmds.getAttr(node + ".input")
+<br># Result: [0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0] # 
+<br>cmds.getAttr(node + ".output")
+<br># Result: [5.0, 6.0, 7.0, 8.0] # 
+</code>
 <h2>Attributes</h2>
 <table class="doxtable">
 <tr>

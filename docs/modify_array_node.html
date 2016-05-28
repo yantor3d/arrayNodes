@@ -40,6 +40,14 @@
 <div class="contents">
 <a name="details" id="details"></a>
 <div class="textblock"><p>This node applies a function to the input array and outputs the result.</p>
+<h2>Example</h2>
+<code>
+node = cmds.createNode('modifyArray')
+<br>cmds.setAttr(node + ".input", [1.0, 3.0, -2.0, 5.0, 7.0], type="doubleArray")
+<br>cmds.setAttr(node + "operation", 1)
+<br>cmds.getAttr(node + ".output")
+<br># Result [-2.0, 1.0, 3.0, 5.0, 7.0] #
+</code>
 <h2>Attributes</h2>
 <table class="doxtable">
 <tr>
@@ -49,12 +57,13 @@
 <tr>
 <td colspan="3">List of input values that will be normalized. The sum of normalized values is always 1.0. </td></tr>
 <tr>
-<td>operation </td><td>op </td><td>enu, </td></tr>
+<td>operation </td><td>op </td><td>enum </td></tr>
 <tr>
 <td colspan="3">The operation that will be applied to the <code>input</code> values. <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">No Operation</td><td>Output will be identical to the input. </td></tr>
     <tr><td class="paramname">Sort</td><td>Output will contain all the values of the input, sorted by value. </td></tr>
+    <tr><td class="paramname">Absolute Value</td><td>Output will contain the absolute values of the input. </td></tr>
     <tr><td class="paramname">Reflect Left</td><td>Output will be the input reflected across the first value. <br />
  For example: : [0, 1, 2, 3, 4] -&gt; [4, 3, 2, 1, 0, 1, 2, 3, 4] </td></tr>
     <tr><td class="paramname">Reflect Right</td><td>Output will be the input reflected across the last value. <br />

@@ -10,7 +10,7 @@
             <tr><th> Attribute Name <th> Short Name <th> Attribute Type
             <tr><td> input          <td> i          <td> doubleArray
             <tr><td colspan = "3"> List of input values that will be used in the calculations.
-            <tr><td> operation      <td> op          <td> enu,
+            <tr><td> operation      <td> op          <td> enum
             <tr><td colspan = "3"> The operation that will be applied to the `input` values. 
                 @param "No Operation"   No calculations will be performed
                 @param Sum              Each output will be the sum of the input values.

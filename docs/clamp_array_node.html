@@ -40,6 +40,15 @@
 <div class="contents">
 <a name="details" id="details"></a>
 <div class="textblock"><p>This node clamps the values of the input array within a specified range.</p>
+<h2>Example</h2>
+<code>
+node = cmds.createNode('clampArray')
+<br>cmds.setAttr(node + ".input", range(10), type="doubleArray")
+<br>cmds.setAttr(node + ".min", 0.0)
+<br>cmds.setAttr(node + ".max", 1.0)
+<br>cmds.getAttr(node + ".output")
+<br># Result [0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0] #
+</code>
 <h2>Attributes</h2>
 <table class="doxtable">
 <tr>

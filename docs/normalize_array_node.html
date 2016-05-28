@@ -40,6 +40,17 @@
 <div class="contents">
 <a name="details" id="details"></a>
 <div class="textblock"><p>This node calculates the normalized value of each value in the input arrays.</p>
+<h2>Example</h2>
+<code>
+node = cmds.createNode('normalizeArray')
+<br>cmds.setAttr(node + ".input[0]", [0.2, 0.3, 0.4], type="doubleArray")
+<br>cmds.setAttr(node + ".input[1]", [0.6, 0.6, 0.6], type="doubleArray")
+<br>cmds.setAttr(node + ".input[2]", [0.1, 0.5, 1.0], type="doubleArray")
+<br>cmds.getAttr(node + ".output[0:2]")
+<br># Result: [0.222..., 0.214285, 0.2] # 
+<br># Result: [0.666..., 0.428571, 0.3] # 
+<br># Result: [0.111..., 0.357142, 0.5] # 
+</code>
 <h2>Attributes</h2>
 <table class="doxtable">
 <tr>

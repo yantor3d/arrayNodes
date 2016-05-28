@@ -40,6 +40,16 @@
 <div class="contents">
 <a name="details" id="details"></a>
 <div class="textblock"><p>This node accumulates the values in the input arrays to a function and outputs the results.</p>
+<h2>Example</h2>
+<code>
+node = cmds.createNode('arrayMultiOp')
+<br>cmds.setAttr(node + ".input[0]", range(10), type="doubleArray")
+<br>cmds.setAttr(node + ".input[1]", range(10), type="doubleArray")
+<br>cmds.setAttr(node + ".input[2]", range(10), type="doubleArray")
+<br>cmds.setAttr(node + ".operation", 1)
+<br>cmds.getAttr(node + ".output")
+<br># Result [0.0, 3.0, 6.0, 9.0, 12.0, 15.0, 18.0, 21.0, 24.0, 27.0, 30.0] #
+</code>
 <h2>Attributes</h2>
 <table class="doxtable">
 <tr>
@@ -49,7 +59,7 @@
 <tr>
 <td colspan="3">List of input values that will be used in the calculations. </td></tr>
 <tr>
-<td>operation </td><td>op </td><td>enu, </td></tr>
+<td>operation </td><td>op </td><td>enum </td></tr>
 <tr>
 <td colspan="3">The operation that will be applied to the <code>input</code> values. <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">

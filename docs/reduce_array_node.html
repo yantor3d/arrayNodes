@@ -40,6 +40,14 @@
 <div class="contents">
 <a name="details" id="details"></a>
 <div class="textblock"><p>This node applies an accumulating function to the values of the input array and outputs a single value.</p>
+<h2>Example</h2>
+<code>
+node = cmds.createNode('reduceArray')
+<br>cmds.setAttr(node + ".input", range(10), type="doubleArray")
+<br>cmds.setAttr(node + ".operation", 1)
+<br>cmds.getAttr(node + ".output")
+<br># Result 55 #
+</code>
 <h2>Attributes</h2>
 <table class="doxtable">
 <tr>
@@ -49,7 +57,7 @@
 <tr>
 <td colspan="3">Input values that will be reduced to a single value. </td></tr>
 <tr>
-<td>operation </td><td>op </td><td>enu, </td></tr>
+<td>operation </td><td>op </td><td>enum </td></tr>
 <tr>
 <td colspan="3">The operation that will be applied to the <code>input</code> values. <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">

@@ -10,7 +10,7 @@
             <tr><th> Attribute Name <th> Short Name <th> Attribute Type
             <tr><td> input          <td> i          <td> doubleArray
             <tr><td colspan = "3"> Input values that will be reduced to a single value.
-            <tr><td> operation      <td> op          <td> enu,
+            <tr><td> operation      <td> op          <td> enum
             <tr><td colspan = "3"> The operation that will be applied to the `input` values.
                 @param "No Operation"   Output will be 0.0.
                 @param Sum              Output will be the first value plus the remaining values.

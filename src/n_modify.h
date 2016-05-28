@@ -10,7 +10,7 @@
             <tr><th> Attribute Name <th> Short Name <th> Attribute Type
             <tr><td> input          <td> i          <td> doubleArray
             <tr><td colspan = "3"> List of input values that will be normalized. The sum of normalized values is always 1.0.
-            <tr><td> operation      <td> op          <td> enu,
+            <tr><td> operation      <td> op          <td> enum
             <tr><td colspan = "3"> The operation that will be applied to the `input` values.
                 @param "No Operation"   Output will be identical to the input.
                 @param Sort             Output will contain all the values of the input, sorted by value.

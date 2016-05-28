@@ -40,6 +40,13 @@
 <div class="contents">
 <a name="details" id="details"></a>
 <div class="textblock"><p>This node sets the values of each index in the input array to the index of the multi-index output.</p>
+<h2>Example</h2>
+<code>
+node = cmds.createNode('arrayIter')
+<br>cmds.setAttr(node + ".input", range(10), type="doubleArray")
+<br>cmds.getAttr(node + ".output[0:10]")
+<br># Result [0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0] #
+</code>
 <h2>Attributes</h2>
 <table class="doxtable">
 <tr>

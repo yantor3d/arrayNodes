@@ -40,6 +40,15 @@
 <div class="contents">
 <a name="details" id="details"></a>
 <div class="textblock"><p>This node concatenates the input arrays and outputs a single array.</p>
+<h2>Example</h2>
+<code>
+node = cmds.createNode('chainArrays')
+<br>cmds.setAttr(node + ".input[0]", range(5), type="doubleArray")
+<br>cmds.setAttr(node + ".input[1]", range(5), type="doubleArray")
+<br>cmds.setAttr(node + ".input[2]", range(5), type="doubleArray")
+<br>cmds.getAttr(node + ".output")
+<br># Result [0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 0.0, 1.0, 2.0, 3.0, 4.0, 5.0] #
+</code>
 <h2>Attributes</h2>
 <table class="doxtable">
 <tr>

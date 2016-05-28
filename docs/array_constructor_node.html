@@ -40,6 +40,14 @@
 <div class="contents">
 <a name="details" id="details"></a>
 <div class="textblock"><p>This node constructs an array from the indices of the multi-index input.</p>
+<h2>Example</h2>
+<code>
+node = cmds.createNode('arrayCtor')
+<br>cmds.setAttr(node + ".input[0:10]", *range(10))
+<br>cmds.setAttr(node + ".size", 10)
+<br>cmds.getAttr(node + ".output")
+<br># Result [0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0] #
+</code>
 <h2>Attributes</h2>
 <table class="doxtable">
 <tr>
