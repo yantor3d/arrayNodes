@@ -55,7 +55,7 @@ MStatus ModifyArrayNode::initialize()
     E.addField("Sort", kSORT);
     E.addField("Absolute Value", kABS);
     E.addField("Reflect Left", kREFLECT_LEFT);
-    E.addField("Reflect Righ", kREFLECT_RIGHT);
+    E.addField("Reflect Right", kREFLECT_RIGHT);
     E.setDefault(kNO_OP);
     E.setKeyable(true);
     E.setStorable(true);
