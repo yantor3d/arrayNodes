@@ -160,7 +160,7 @@ MStatus ArrayMultiOperatorNode::compute(const MPlug& plug, MDataBlock& data)
             }
 
             if (operation == kAVERAGE && numValues > 0)
-                value /= float(numValues);
+                value /= float(numValues + 1);
 
             outputArray.set(value, i);
         }
@@ -185,7 +185,7 @@ MStatus ArrayMultiOperatorNode::compute(const MPlug& plug, MDataBlock& data)
             }
 
             if (operation == kAVERAGE && numValues > 0)
-                value /= float(numValues);
+                value /= float(numValues + 1);
 
             outputArray.set(value, i);
         }
