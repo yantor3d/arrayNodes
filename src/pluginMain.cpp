@@ -38,7 +38,9 @@
 
     ## Nodes
         - <a href="class_array_constructor_node.html">arrayCtor</a>
+        - <a href="class_array_angle_constructor_node.html">arrayAngleCtor</a>
         - <a href="class_array_iterator_node.html">arrayIter</a>
+        - <a href="class_array_angle_iterator_node.html">arrayAngleIter</a>
         - <a href="class_array_multi_operator_node.html">arrayMultiOp</a>
         - <a href="class_array_scalar_operation_node.html">arrayScalarOp</a>
         - <a href="class_chain_arrays_node.html">chainArray</a>
@@ -56,7 +58,9 @@
 #include "n_chain.h"
 #include "n_clamp.h"
 #include "n_ctor.h"
+#include "n_ctorAngle.h"
 #include "n_iter.h"
+#include "n_iterAngle.h"
 #include "n_modify.h"
 #include "n_multi.h"
 #include "n_normalize.h"
@@ -76,8 +80,14 @@ const char* kREQUIRED_API_VERSION = "Any";
 MTypeId ArrayConstructorNode::kNODE_ID = 0x00126b00;
 MString ArrayConstructorNode::kNODE_NAME = "arrayCtor";
 
+MTypeId ArrayAngleConstructorNode::kNODE_ID = 0x00126b0a;
+MString ArrayAngleConstructorNode::kNODE_NAME = "arrayAngleCtor";
+
 MTypeId ArrayIteratorNode::kNODE_ID = 0x00126b01;
 MString ArrayIteratorNode::kNODE_NAME = "arrayIter";
+
+MTypeId ArrayAngleIteratorNode::kNODE_ID = 0x00126b0c;
+MString ArrayAngleIteratorNode::kNODE_NAME = "arrayAngleIter";
 
 MTypeId ArrayMultiOperatorNode::kNODE_ID = 0x00126b02;
 MString ArrayMultiOperatorNode::kNODE_NAME = "arrayMultiOp";
@@ -127,8 +137,10 @@ MStatus initializePlugin(MObject obj)
     MFnPlugin fnPlugin(obj, kAUTHOR, kVERSION, kREQUIRED_API_VERSION);
 
     REGISTER_NODE(ArrayConstructorNode);
+    REGISTER_NODE(ArrayAngleConstructorNode);
     REGISTER_NODE(ArrayMultiOperatorNode);
     REGISTER_NODE(ArrayIteratorNode);
+    REGISTER_NODE(ArrayAngleIteratorNode);
     REGISTER_NODE(ArrayScalarOperationNode);
     REGISTER_NODE(ModifyArrayNode);
     REGISTER_NODE(ChainArraysNode);
@@ -147,8 +159,10 @@ MStatus uninitializePlugin(MObject obj)
     MFnPlugin fnPlugin(obj, kAUTHOR, kVERSION, kREQUIRED_API_VERSION);
 
     DEREGISTER_NODE(ArrayConstructorNode);
+    DEREGISTER_NODE(ArrayAngleConstructorNode);
     DEREGISTER_NODE(ArrayMultiOperatorNode);
     DEREGISTER_NODE(ArrayIteratorNode);
+    DEREGISTER_NODE(ArrayAngleIteratorNode);
     DEREGISTER_NODE(ArrayScalarOperationNode);
     DEREGISTER_NODE(ModifyArrayNode);
     DEREGISTER_NODE(ChainArraysNode);
