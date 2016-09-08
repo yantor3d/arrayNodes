@@ -4,6 +4,8 @@
 */
 
 #include <algorithm>
+#include <cmath>
+#include <cfloat>
 
 #include "utils.h"
 

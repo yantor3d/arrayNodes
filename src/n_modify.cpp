@@ -5,6 +5,7 @@
 
 #include <algorithm>
 #include <vector>
+#include <cmath>
 
 #include "n_modify.h"
 

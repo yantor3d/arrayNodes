@@ -6,6 +6,8 @@
 #include "n_remap.h"
 
 #include <vector>
+#include <cmath>
+#include <cfloat>
 #include <algorithm>
 
 #include <maya/MDataBlock.h>
