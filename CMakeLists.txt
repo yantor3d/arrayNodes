@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.6)
-project(angularNodes)
+project(arrayNodes)
 
 set(MAYA_LIBRARIES OpenMaya OpenMayaAnim OpenMayaFX OpenMayaRender OpenMayaUI Foundation)
 
