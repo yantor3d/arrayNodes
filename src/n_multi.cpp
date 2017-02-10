@@ -116,7 +116,7 @@ MStatus ArrayMultiOperatorNode::compute(const MPlug& plug, MDataBlock& data)
         
         numOutputs = max(int(inputArray.length()), numOutputs);
 
-        inputArrays[i] = inputArray;
+        inputArrays[i] = MDoubleArray(inputArray);
 
         if (!inputArrayHandle.next()) break;
     }

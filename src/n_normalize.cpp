@@ -103,7 +103,7 @@ MStatus NormalizeArrayNode::compute(const MPlug& plug, MDataBlock& data)
         MFnDoubleArrayData inputArrayData(inputHnd.data());
         MDoubleArray inputArray = inputArrayData.array(&status);
 
-        inputs[i] = status ? inputArray : MDoubleArray();
+        inputs[i] = status ? MDoubleArray(inputArray) : MDoubleArray();
         sizes[i] = int(inputArray.length());
         indices[i] = inputArrayHandle.elementIndex();
 
