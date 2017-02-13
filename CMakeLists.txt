@@ -1,64 +1,18 @@
 cmake_minimum_required(VERSION 2.6)
-project(arrayNodes)
 
-set(MAYA_LIBRARIES OpenMaya OpenMayaAnim OpenMayaFX OpenMayaRender OpenMayaUI Foundation)
+# Download Chad Vernon's cgcmake package (https://github.com/chadmv/cgcmake/)
+# and make sure your CMAKE_MODULES_PATH environment variable points at it.
 
-INCLUDE_DIRECTORIES($ENV{MAYA_INCLUDE_PATH})
-LINK_DIRECTORIES($ENV{MAYA_LIBRARY_PATH})
+set(CMAKE_MODULE_PATH "$ENV{CMAKE_MODULE_PATH}")
+    
+project(arrayNodes)   
+    file(GLOB SOURCE_FILES "src/*.cpp" "src/*.h")
+    find_package(Maya REQUIRED) 
 
-if (WIN32)
-    set(MAYA_COMPILE_DEFINITIONS REQUIRE_IOSTREAM _BOOL NT_PLUGIN)
-    set(MAYA_LINK_FLAGS "/export:initializePlugin /export:uninitializePlugin")
-    set(MAYA_COMPILE_FLAGS "/MD")
-    set(MAYA_EXTENSION ".mll")
-elseif(UNIX AND NOT APPLE)
-    set(MAYA_COMPILE_DEFINITIONS REQUIRE_IOSTREAM _BOOL LINUX _LINUX LINUX_64)
-    set(MAYA_LINK_FLAGS "-shared -m64 -g -pthread -pipe -fPIC -Wno-deprecated -fno-gnu-keywords -Wl,-Bsymbolic")
-    set(MAYA_COMPILE_FLAGS "-m64 -g -pthread -pipe -fPIC -Wno-deprecated -fno-gnu-keywords -Wl,-Bsymbolic")
-    set(MAYA_EXTENSION ".so")
-else()
-    message(FATAL_ERROR, "This CMake file is configured for Windows or Linux")
-endif()
+    include_directories(${MAYA_INCLUDE_DIR})
+    link_directories(${MAYA_LIBRARY_DIR})
 
-set(SOURCE_FILES
-    "src/n_chain.h"
-    "src/n_clamp.h"
-    "src/n_ctor.h"
-    "src/n_ctorAngle.h"
-    "src/n_iter.h"
-    "src/n_iterAngle.h"
-    "src/n_modify.h"
-    "src/n_multi.h"
-    "src/n_normalize.h"
-    "src/n_reduce.h"
-    "src/n_remap.h"
-    "src/n_scalar.h"
-    "src/n_slice.h"
-    "src/utils.h"
-    "src/n_chain.cpp"
-    "src/n_clamp.cpp"
-    "src/n_ctor.cpp"
-    "src/n_ctorAngle.cpp"
-    "src/n_iter.cpp"
-    "src/n_iterAngle.cpp"
-    "src/n_modify.cpp"
-    "src/n_multi.cpp"
-    "src/n_normalize.cpp"
-    "src/n_reduce.cpp"
-    "src/n_remap.cpp"
-    "src/n_scalar.cpp"
-    "src/n_slice.cpp"
-    "src/pluginMain.cpp"
-    "src/utils.cpp"
-)
-
-ADD_LIBRARY(${PROJECT_NAME} SHARED ${SOURCE_FILES})
-TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${MAYA_LIBRARIES})
-
-SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES 
-    COMPILE_DEFINITIONS "${MAYA_COMPILE_DEFINITIONS}"
-    COMPILE_FLAGS "${MAYA_COMPILE_FLAGS}"
-    LINK_FLAGS "${MAYA_LINK_FLAGS}"
-    PREFIX ""
-    SUFFIX "${MAYA_EXTENSION}"
-)
+    add_library(${PROJECT_NAME} SHARED ${SOURCE_FILES})
+    target_link_libraries(${PROJECT_NAME} ${MAYA_LIBRARIES})
+    
+    MAYA_PLUGIN(${PROJECT_NAME})
